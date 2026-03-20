@@ -3,73 +3,219 @@
 <head>
   <title>Portfolio - Magdave Digital</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      color: #fff;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url('https://res.cloudinary.com/dzq20rwzg/image/upload/v1770821585/samples/ecommerce/analog-classic.jpg') center/cover no-repeat;
+    }
+
+    /* FILTER TABS */
+    .filters {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .filters button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      background: #004aad;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .filters button:hover,
+    .filters button.active {
+      background: #ff7f11;
+    }
+
+    /* PORTFOLIO GRID */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    /* HOVER EFFECT */
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,74,173,0.85);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: 0.3s;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+  </style>
 </head>
+
 <body>
 
-<!-- NAVBAR WITH LOGO -->
+<!-- NAVBAR -->
 <nav class="navbar">
-  <img src="images/logo.png" class="logo" alt="Magdave Logo">
-
+  <img src="https://res.cloudinary.com/dzq20rwzg/image/upload/v1773818804/logo_nztpli.png" class="logo">
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="services.html">Services</a>
+    <a href="service.html">Service</a>
     <a href="portfolio.html">Portfolio</a>
     <a href="contact.html">Contact</a>
   </div>
 </nav>
 
-<!-- HERO SECTION -->
-<section class="hero" style="background-image: url('images/portfolio-hero.jpg');">
-  <div class="hero-content">
-    <h1>Our Portfolio</h1>
-    <p>Some of the projects we’ve worked on for our clients.</p>
-  </div>
+<!-- HERO -->
+<section class="hero">
+  <h1>Our Portfolio</h1>
+  <p>Explore our creative work and successful projects</p>
 </section>
 
-<!-- PORTFOLIO PROJECTS -->
-<section class="portfolio-cards">
+<!-- FILTER BUTTONS -->
+<div class="filters">
+  <button class="active" onclick="filterItems('all')">All</button>
+  <button onclick="filterItems('web')">Web Design</button>
+  <button onclick="filterItems('ecommerce')">E-commerce</button>
+  <button onclick="filterItems('branding')">Branding</button>
+</div>
 
-  <!-- Project 1 -->
-  <div class="card">
-    <img src="images/project1.jpg" alt="Coob Hotel Website">
-    <h3>Coob Hotel Website</h3>
-    <p><strong>Client:</strong> Coob Hotel</p>
-    <p><strong>Description:</strong> Booking & info website with custom design.</p>
-    <p><strong>Result:</strong> 40% increase in online reservations.</p>
+<!-- PORTFOLIO GRID -->
+<section class="portfolio-grid">
+
+  <div class="portfolio-item web">
+    <img src="https://res.cloudinary.com/dzq20rwzg/image/upload/v1773819485/images_8_zedcwt.jpg" onclick="openLightbox(this.src)">
+    <div class="portfolio-overlay">
+      <h3>Coob Hotel Website</h3>
+      <p>Booking website design</p>
+    </div>
   </div>
 
-  <!-- Project 2 -->
-  <div class="card">
-    <img src="images/project2.jpg" alt="Francess-Amor Fashion E-commerce">
-    <h3>Francess-Amor Fashion E-commerce</h3>
-    <p><strong>Client:</strong> Francess-Amor Fashion</p>
-    <p><strong>Description:</strong> Online shop with product catalog & branding.</p>
-    <p><strong>Result:</strong> Boosted online sales by 25%.</p>
+  <div class="portfolio-item ecommerce">
+    <img src="https://res.cloudinary.com/dzq20rwzg/image/upload/v1770822320/AMOR_F_prkfqi.jpg" onclick="openLightbox(this.src)">
+    <div class="portfolio-overlay">
+      <h3>Fashion Store</h3>
+      <p>E-commerce platform</p>
+    </div>
   </div>
 
-  <!-- Project 3 -->
-  <div class="card">
-    <img src="images/project3.jpg" alt="Local Startup Landing Page">
-    <h3>Local Startup Landing Page</h3>
-    <p><strong>Client:</strong> Tech Startup</p>
-    <p><strong>Description:</strong> Responsive single-page site for lead generation.</p>
-    <p><strong>Result:</strong> Improved customer inquiries by 30%.</p>
+  <div class="portfolio-item branding">
+    <img src="https://res.cloudinary.com/dzq20rwzg/image/upload/v1773839828/Luxury_cleaning_services_logo_design_ggizv4.png" onclick="openLightbox(this.src)">
+    <div class="portfolio-overlay">
+      <h3>Brand Identity</h3>
+      <p>Logo & branding</p>
+    </div>
+  </div>
+
+  <div class="portfolio-item web">
+    <img src="https://res.cloudinary.com/dzq20rwzg/image/upload/v1770822070/MUNET_3_sxprii.jpg" onclick="openLightbox(this.src)">
+    <div class="portfolio-overlay">
+      <h3>Startup Website</h3>
+      <p>Landing page design</p>
+    </div>
   </div>
 
 </section>
 
-<!-- CTA BUTTON -->
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<!-- CTA -->
 <section style="text-align:center; margin:50px 0;">
-  <a href="https://wa.me/2348166101044?text=Hi%20Magdave%20Digital,%20I%20want%20to%20discuss%20my%20project" 
-     class="btn" target="_blank">
-    Contact Us on WhatsApp
-  </a>
+  <a href="https://wa.me/2348166101044" class="btn">Contact Us on WhatsApp</a>
 </section>
 
 <footer>
   &copy; 2026 Magdave Digital. All Rights Reserved.
 </footer>
+
+<!-- JS -->
+<script>
+function filterItems(category) {
+  let items = document.querySelectorAll('.portfolio-item');
+  let buttons = document.querySelectorAll('.filters button');
+
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+
+  items.forEach(item => {
+    if (category === 'all' || item.classList.contains(category)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+function openLightbox(src) {
+  document.getElementById('lightbox').classList.add('active');
+  document.getElementById('lightbox-img').src = src;
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+</script>
 
 </body>
 </html>

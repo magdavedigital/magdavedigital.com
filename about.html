@@ -3,42 +3,157 @@
 <head>
   <title>About - Magdave Digital</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 140px 20px;
+      color: #fff;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url('https://res.cloudinary.com/dzq20rwzg/image/upload/v1770821610/cld-sample-3.jpg') center/cover no-repeat;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat h2 {
+      font-size: 2.5em;
+      color: #ff7f11;
+    }
+
+    /* TEAM */
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .team-card {
+      width: 260px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .team-card img {
+      width: 100%;
+    }
+
+    .team-info {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .team-socials {
+      margin-top: 10px;
+    }
+
+    .team-socials a {
+      margin: 0 5px;
+      color: #004aad;
+      font-weight: bold;
+    }
+
+    /* TESTIMONIAL */
+    .testimonials {
+      background: #004aad;
+      color: #fff;
+      padding: 60px 20px;
+    }
+
+    .testimonial-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .testimonial {
+      background: #fff;
+      color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      width: 280px;
+    }
+
+    .stars {
+      color: gold;
+      margin-bottom: 10px;
+    }
+
+  </style>
 </head>
+
 <body>
 
-<!-- NAVBAR WITH LOGO -->
+<!-- NAV -->
 <nav class="navbar">
-  <img src="images/logo.png" class="logo" alt="Magdave Logo">
-
+  <img src="https://res.cloudinary.com/dzq20rwzg/image/upload/v1773818804/logo_nztpli.png" class="logo">
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="services.html">Services</a>
+    <a href="service.html">Service</a>
     <a href="portfolio.html">Portfolio</a>
     <a href="contact.html">Contact</a>
   </div>
 </nav>
 
-<!-- HERO SECTION -->
-<section class="hero" style="background-image: url('images/about.jpg');">
-  <div class="hero-content">
-    <h1>About Magdave Digital</h1>
-    <p>Helping businesses build a strong online presence with creative solutions.</p>
+<!-- HERO -->
+<section class="hero">
+  <h1>About Magdave Digital</h1>
+  <p>We build powerful digital experiences that grow your business.</p>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <h2 class="counter" data-target="50">0</h2>
+      <p>Projects Completed</p>
+    </div>
+    <div class="stat">
+      <h2 class="counter" data-target="30">0</h2>
+      <p>Happy Clients</p>
+    </div>
+    <div class="stat">
+      <h2 class="counter" data-target="5">0</h2>
+      <p>Years Experience</p>
+    </div>
   </div>
 </section>
 
-<!-- MISSION, VISION, VALUES -->
+<!-- ABOUT CARDS -->
 <section class="about-cards">
-  <div class="card">
+  <div class="card" data-aos="fade-up">
     <h2>Our Mission</h2>
-    <p>To provide businesses with modern, responsive websites and digital strategies that convert.</p>
+    <p>To deliver modern, high-converting websites for businesses.</p>
   </div>
-  <div class="card">
+
+  <div class="card" data-aos="fade-up" data-aos-delay="100">
     <h2>Our Vision</h2>
-    <p>To be the go-to digital agency for growing businesses worldwide.</p>
+    <p>To become a leading digital agency globally.</p>
   </div>
-  <div class="card">
-    <h2>Our Core Values</h2>
+
+  <div class="card" data-aos="fade-up" data-aos-delay="200">
+    <h2>Core Values</h2>
     <ul>
       <li>Creativity</li>
       <li>Innovation</li>
@@ -48,9 +163,92 @@
   </div>
 </section>
 
+<!-- TEAM -->
+<section>
+  <h2 style="text-align:center;">Meet Our Team</h2>
+  <div class="team-container">
+
+    <div class="team-card" data-aos="zoom-in">
+      <img src="https://res.cloudinary.com/dzq20rwzg/image/upload/v1773842364/MAG_D_vjsitp.jpg">
+      <div class="team-info">
+        <h3>Austin David</h3>
+        <p>Founder</p>
+        <div class="team-socials">
+          <a href="#">F</a>
+          <a href="#">I</a>
+          <a href="#">L</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
+      <img src="https://res.cloudinary.com/dzq20rwzg/image/upload/v1773842558/my_kid_h4r5l0.jpg">
+      <div class="team-info">
+        <h3>Creative Lead</h3>
+        <p>Designer</p>
+        <div class="team-socials">
+          <a href="#">F</a>
+          <a href="#">I</a>
+          <a href="#">L</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonials">
+  <h2 style="text-align:center;">What Clients Say</h2>
+
+  <div class="testimonial-container">
+
+    <div class="testimonial" data-aos="fade-up">
+      <div class="stars">★★★★★</div>
+      <p>"Amazing service, highly professional!"</p>
+      <strong>- Coob Hotel</strong>
+    </div>
+
+    <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+      <div class="stars">★★★★★</div>
+      <p>"Our sales increased massively!"</p>
+      <strong>- Fashion Brand</strong>
+    </div>
+
+  </div>
+</section>
+
 <footer>
-  &copy; 2026 Magdave Digital. All Rights Reserved.
+  &copy; 2026 Magdave Digital
 </footer>
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({ duration: 1000, once: true });
+
+// COUNTER ANIMATION
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+  let update = () => {
+    let target = +counter.getAttribute('data-target');
+    let count = +counter.innerText;
+
+    let increment = target / 100;
+
+    if (count < target) {
+      counter.innerText = Math.ceil(count + increment);
+      setTimeout(update, 20);
+    } else {
+      counter.innerText = target;
+    }
+  };
+
+  update();
+});
+</script>
 
 </body>
 </html>

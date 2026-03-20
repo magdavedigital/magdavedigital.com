@@ -4,30 +4,28 @@
   <title>Contact - Magdave Digital</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    /* =============== GENERAL ================= */
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
       background-color: #f4f8fb;
       color: #333;
+      text-align: center; /* ✅ GLOBAL CENTER */
     }
 
-    /* =============== NAVBAR ================= */
+    /* NAVBAR */
     nav.navbar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
+      align-items: center;
       padding: 15px 20px;
       background-color: #004aad;
+      flex-wrap: wrap;
     }
 
-    nav img.logo {
-      height: 50px;
-    }
+    nav img.logo { height: 50px; }
 
     .nav-links {
       display: flex;
@@ -40,7 +38,7 @@
       font-weight: bold;
       padding: 8px 12px;
       border-radius: 4px;
-      transition: background 0.3s, transform 0.3s;
+      transition: 0.3s;
     }
 
     .nav-links a:hover {
@@ -48,64 +46,49 @@
       transform: scale(1.05);
     }
 
-    /* =============== HERO ================= */
+    /* HERO WITH PLACEHOLDER */
     .hero {
-      text-align: center;
       padding: 120px 20px;
-      background: url('images/contact-hero.jpg') center/cover no-repeat;
       color: #fff;
       position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      top:0; left:0; width:100%; height:100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 1;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url('https://res.cloudinary.com/dzq20rwzg/image/upload/v1770821605/samples/coffee.jpg') center/cover no-repeat;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
       max-width: 800px;
       margin: auto;
     }
 
     .hero h1 {
       font-size: 3em;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .hero p {
       font-size: 1.2em;
     }
 
-    /* =============== CONTACT SECTION ================= */
+    /* CONTACT SECTION */
     .contact-section {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 60px auto;
       display: flex;
-      gap: 50px;
+      gap: 40px;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: flex-start;
     }
 
     form.contact-form {
       flex: 1 1 400px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
       background: #fff;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
-    }
-
-    form.contact-form:hover {
-      transform: translateY(-5px);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: center; /* ✅ CENTER FORM */
     }
 
     form input, form textarea {
@@ -114,13 +97,6 @@
       border: 1px solid #ccc;
       font-size: 1em;
       width: 100%;
-      transition: border 0.3s, box-shadow 0.3s;
-    }
-
-    form input:focus, form textarea:focus {
-      border: 2px solid #ff7f11;
-      box-shadow: 0 0 10px rgba(255,127,17,0.3);
-      outline: none;
     }
 
     form button {
@@ -128,29 +104,20 @@
       color: #fff;
       border: none;
       padding: 12px;
-      font-size: 1em;
       border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s, transform 0.3s;
     }
 
-    form button:hover {
-      background-color: #e66600;
-      transform: scale(1.05);
-    }
+    form button:hover { background-color: #e66600; }
 
-    /* =============== CONTACT INFO ================= */
+    /* CONTACT INFO */
     .contact-info {
       flex: 1 1 300px;
       background: #fff;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
-    }
-
-    .contact-info:hover {
-      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(243, 139, 4, 0.918);
+      text-align: center; /* ✅ CENTER INFO */
     }
 
     .contact-info h3 {
@@ -158,95 +125,77 @@
       margin-bottom: 15px;
     }
 
-    .contact-info p {
-      margin: 10px 0;
-    }
-
-    /* =============== SOCIAL ICONS ================= */
     .social-icons {
       margin-top: 20px;
       display: flex;
+      justify-content: center; /* ✅ CENTER ICONS */
       gap: 15px;
     }
 
     .social-icons a {
-      display: inline-block;
       background: #004aad;
       color: #fff;
       padding: 10px;
       border-radius: 50%;
       text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s, transform 0.3s;
     }
 
-    .social-icons a:hover {
-      background: #ff7f11;
-      transform: scale(1.2);
-    }
+    .social-icons a:hover { background: #ff7f11; }
 
-    /* =============== MAP ================= */
+    /* MAP */
     .map {
-      width: 100%;
+      width: 90%;
+      max-width: 1000px;
       height: 400px;
+      margin: 50px auto;
       border-radius: 10px;
-      margin: 50px 0;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
     }
 
-    /* =============== WHATSAPP CTA ================= */
+    /* WHATSAPP */
     .whatsapp-cta {
-      display: block;
-      text-align: center;
       margin: 50px 0;
     }
 
     .whatsapp-cta a {
-      text-decoration: none;
       padding: 15px 30px;
       background-color: #ff7f11;
       color: #fff;
-      font-weight: bold;
       border-radius: 5px;
-      transition: background 0.3s, transform 0.3s;
+      font-weight: bold;
     }
 
-    .whatsapp-cta a:hover {
-      background-color: #e66600;
-      transform: scale(1.05);
-    }
-
-    /* =============== FOOTER ================= */
+    /* FOOTER */
     footer {
-      text-align: center;
       padding: 30px 20px;
       background-color: #004aad;
       color: #fff;
       margin-top: 40px;
     }
 
-    /* =============== RESPONSIVE ================= */
+    /* RESPONSIVE */
     @media(max-width: 900px) {
       .contact-section {
         flex-direction: column;
         align-items: center;
       }
+
       .hero h1 {
         font-size: 2.2em;
       }
     }
   </style>
 </head>
+
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <img src="images/logo.png" class="logo" alt="Magdave Logo">
+  <img src="https://res.cloudinary.com/dzq20rwzg/image/upload/v1773818804/logo_nztpli.png" class="logo" alt="Logo Placeholder">
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="services.html">Services</a>
+    <a href="service.html">Service</a>
     <a href="portfolio.html">Portfolio</a>
     <a href="contact.html">Contact</a>
   </div>
@@ -260,45 +209,41 @@
   </div>
 </section>
 
-<!-- CONTACT FORM & INFO -->
+<!-- CONTACT -->
 <section class="contact-section">
-  <!-- Form -->
+
   <form class="contact-form">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="text" name="subject" placeholder="Subject" required>
-    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <input type="text" placeholder="Subject">
+    <textarea rows="5" placeholder="Your Message"></textarea>
     <button type="submit">Send Message</button>
   </form>
 
-  <!-- Contact Info -->
-  <div class="contact-info">
+  <form class="contact-form" action="https://formspree.io/f/xvzwdrkl" method="POST">
     <h3>Get in Touch</h3>
-    <p><strong>Email:</strong> info@magdavedigital.com</p>
-    <p><strong>Phone:</strong> +234 801 234 5678</p>
-    <p><strong>Location:</strong> Abuja, Nigeria</p>
+    <p>Email: info@magdavedigital.com</p>
+    <p>Phone: +234 816 610 1044</p>
+    <p>Location: Abuja, Nigeria</p>
+
     <div class="social-icons">
-      <a href="https://web.facebook.com/profile.php?id=100089780234947" target="_blank">F</a>
-      <a href="https://twitter.com/magdavedigital" target="_blank">T</a>
-      <a href="https://instagram.com/magdavedigital" target="_blank">I</a>
-      <a href="https://linkedin.com/in/austin-david-Vanity URL name" target="_blank">L</a>
+      <a href="#">F</a>
+      <a href="#">T</a>
+      <a href="#">I</a>
+      <a href="#">L</a>
     </div>
   </div>
+
 </section>
 
-<!-- GOOGLE MAP -->
+<!-- MAP -->
 <div class="map">
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.123456!2d7.489!3d9.057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xabcdef123456!2sMagdave%20Digital!5e0!3m2!1sen!2sng!4v1678901234567" 
-    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
+  <iframe src="https://maps.google.com/maps?q=Abuja&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 </div>
 
-<!-- WHATSAPP CTA -->
+<!-- WHATSAPP -->
 <div class="whatsapp-cta">
-  <a href="https://wa.me/2348166101044?text=Hi%20Magdave%20Digital,%20I%20want%20to%20discuss%20my%20project" target="_blank">
-    Contact Us on WhatsApp
-  </a>
+  <a href="https://wa.me/2348166101044">Chat on WhatsApp</a>
 </div>
 
 <!-- FOOTER -->
