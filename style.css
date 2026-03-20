@@ -18,8 +18,8 @@ a { text-decoration: none; }
    NAVBAR
 ========================= */
 .navbar {
-  background-color: #004aad; /* brand blue */
-  padding: 15px 30px;
+  background-color: #004aad;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,11 +28,11 @@ a { text-decoration: none; }
   z-index: 1000;
 }
 
-.logo-container { display: flex; align-items: center; gap: 15px; }
-.logo { height: 50px; }
+.logo { height: 45px; }
 
+/* NAV LINKS */
 .nav-links {
-  display: flex; 
+  display: flex;
   gap: 15px;
 }
 
@@ -46,27 +46,30 @@ a { text-decoration: none; }
 
 .nav-links a:hover {
   background-color: #ff7f11;
-  transform: scale(1.05);
 }
 
-/* Hamburger Menu (Mobile) */
-.hamburger { display: none; font-size: 30px; cursor: pointer; color: #fff; }
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
 
 /* =========================
-   HERO SECTION
+   HERO
 ========================= */
 .hero {
   position: relative;
   text-align: center;
-  padding: 140px 20px;
-  overflow: hidden;
+  padding: 120px 20px;
 }
 
 .hero-img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   filter: brightness(50%);
-  display: block;
 }
 
 .hero-content {
@@ -74,99 +77,70 @@ a { text-decoration: none; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 90%;
   color: #fff;
-  max-width: 800px;
 }
 
 .hero-content h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
+  font-size: 2.8em;
 }
 
 .hero-content p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
+  font-size: 1.1em;
+  margin: 15px 0;
 }
 
+/* BUTTON */
 .btn {
-  background-color: #ff7f11; 
+  background-color: #ff7f11;
   color: #fff;
-  padding: 15px 30px;
-  font-weight: bold;
+  padding: 12px 25px;
   border-radius: 5px;
   display: inline-block;
-  transition: 0.3s;
 }
 
-.btn:hover { background-color: #e66600; transform: scale(1.05); }
-
 /* =========================
-   SECTIONS & HEADINGS
+   SECTIONS
 ========================= */
 section {
   max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
-  position: relative;
+  margin: 50px auto;
+  padding: 0 15px;
 }
 
 section h2 {
   text-align: center;
   color: #004aad;
-  margin-bottom: 40px;
-  font-size: 2em;
+  margin-bottom: 30px;
 }
 
 /* =========================
-   CARDS (Services / Portfolio / About)
+   CARDS
 ========================= */
-.card-container, .services-cards, .portfolio-cards, .about-cards {
+.card-container,
+.services-cards,
+.portfolio-cards,
+.about-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
 }
 
+/* KEY FIX: FLEXIBLE WIDTH */
 .card {
+  flex: 1 1 300px;  /* 🔥 THIS FIXES MOBILE */
+  max-width: 350px;
   background: #fff;
   border-radius: 10px;
-  padding: 25px;
-  width: 280px;
+  padding: 20px;
   text-align: center;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-}
-
-.card h3 {
-  color: #004aad;
-  margin-bottom: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 .card img {
   width: 100%;
   border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-/* =========================
-   FLOATING SHAPES (HOME HERO)
-========================= */
-.shape {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.2;
-  z-index: 0;
-  animation: float 6s ease-in-out infinite alternate;
-}
-
-@keyframes float {
-  0% { transform: translateY(0px) translateX(0px); }
-  100% { transform: translateY(-20px) translateX(20px); }
 }
 
 /* =========================
@@ -174,32 +148,67 @@ section h2 {
 ========================= */
 footer {
   text-align: center;
-  padding: 30px 20px;
+  padding: 25px;
   background: #004aad;
   color: #fff;
-  margin-top: 60px;
 }
 
 /* =========================
-   RESPONSIVE
+   TABLET
 ========================= */
-@media(max-width:900px) {
-  .card-container, .services-cards, .portfolio-cards, .about-cards {
-    flex-direction: column;
-    align-items: center;
+@media (max-width: 900px) {
+
+  .hero-content h1 {
+    font-size: 2em;
   }
-  .hero-content h1 { font-size: 2.2em; }
+
   .nav-links {
     display: none;
     flex-direction: column;
     background: #004aad;
     position: absolute;
-    top: 60px;
+    top: 70px;
     right: 0;
-    width: 200px;
-    border-radius: 5px;
+    width: 220px;
     padding: 15px;
   }
-  .nav-links.active { display: flex; }
-  .hamburger { display: block; }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* =========================
+   MOBILE (PHONES)
+========================= */
+@media (max-width: 600px) {
+
+  .hero {
+    padding: 90px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  .card {
+    flex: 1 1 100%;
+  }
+
+  .logo {
+    height: 40px;
+  }
 }
